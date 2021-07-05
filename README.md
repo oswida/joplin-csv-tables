@@ -13,7 +13,7 @@ You can customize Markdown generation through miscellanous settings:
 
 | Setting              | Type    | Default | Description                                    |
 | -------------------- | ------- | ------- | ---------------------------------------------- |
-| Comment              | string  | #       | Set of comment characters                      |
+| Comment              | string  | #       | Comment sequence                               |
 | Delimiter            | string  | ,;      | Set of field delimiter characters              |
 | Quote                | char    | "       | Field quoting character                        |
 | Skip empty lines     | boolean | true    | Do not generate records for empty lines        |
