@@ -23,7 +23,10 @@ async function getSettings(): Promise<CsvSettings> {
 	} as CsvSettings;
 }
 
-async function parseCsv(input: string, okfunc: (output: string[][]) => void, errfunc: (err: any) => void) {
+async function parseCsv(
+	input: string,
+	okfunc: (output: string[][]) => void, errfunc: (err: any) => void
+) {
 	const s = await getSettings();
 	parse(input, {
 		columns: false,
@@ -49,14 +52,17 @@ joplin.plugins.register({
 			label: "Convert CSV to Markdown table",
 			iconName: "fas fa-file-csv",
 			execute: async () => {
+				const dialogs = joplin.views.dialogs;
 				const selectedText = (await joplin.commands.execute('selectedText') as string);
 				if (selectedText != '') {
 					parseCsv(selectedText, (output: any[]) => {
 						const table = markdownTable(output);
 						joplin.commands.execute('replaceSelection', table);
-					}, (err: any) => {
-						alert(err);
+					}, (err: parse.CsvError) => {
+						dialogs.showMessageBox(err.code + "\n" + err.message);
 					});
+				} else {
+					dialogs.showMessageBox("Please select some CSV data.");
 				}
 			},
 		});
