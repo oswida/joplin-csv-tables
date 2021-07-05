@@ -2,11 +2,14 @@
 	"manifest_version": 1,
 	"id": "osw.joplin.csvtable",
 	"app_min_version": "2.0",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"name": "CSV tables support",
 	"description": "Support for CSV tables in Joplin editor. CSV data can be inserted as a raw text and then presented as tables in markdown preview or converted to markdown tables.",
 	"author": "Oskar Świda",
 	"homepage_url": "https://github.com/oswida/joplin-csv-tables",
 	"repository_url": "https://github.com/oswida/joplin-csv-tables",
-	"keywords": []
+	"keywords": [
+		"csv",
+		"joplin"
+	]
 }
