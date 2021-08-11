@@ -1,3 +1,6 @@
+# Important Note: this plugin won't be released as an official product, please look at  `Paste Special (Excel & HTML)` plugin for the functionality.
+
+
 # CSV table converter for Joplin editor
 
 This plugin allows you to convert raw CSV data into Markdown table.
